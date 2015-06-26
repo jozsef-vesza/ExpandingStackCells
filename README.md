@@ -2,7 +2,7 @@
 
 Example code for creating expanding table view cells using stack views, introduced in iOS 9.
 
-![][http://i.imgur.com/RrCFdVa.gif]
+![][gif]
 
 ### What's a stack view?
 
