@@ -9,7 +9,7 @@
 import UIKit
 
 class ExpandingCell: UITableViewCell {
-
+    
     var title: String? {
         didSet {
             titleLabel.text = title
@@ -32,10 +32,17 @@ class ExpandingCell: UITableViewCell {
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
+        
         super.setSelected(selected, animated: animated)
-
-        UIView.animateWithDuration(0.5) {
-            stackView.arrangedSubviews.last?.hidden = !selected
-        }
+        
+        UIView.animateWithDuration(0.5,
+            delay: 0,
+            usingSpringWithDamping: 1,
+            initialSpringVelocity: 1,
+            options: UIViewAnimationOptions.CurveEaseIn,
+            animations: { () -> Void in
+                stackView.arrangedSubviews.last?.hidden = !selected
+            },
+            completion: nil)
     }
 }

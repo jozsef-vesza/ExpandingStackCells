@@ -41,8 +41,21 @@ class MainViewController: UITableViewController {
     
     // MARK: Table view delegate
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         
+        if let selectedIndex = tableView.indexPathForSelectedRow where selectedIndex == indexPath {
+            
+            tableView.beginUpdates()
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            tableView.endUpdates()
+            
+            return nil
+        }
+        
+        return indexPath
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.beginUpdates()
         tableView.endUpdates()
     }
