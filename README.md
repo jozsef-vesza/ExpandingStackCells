@@ -2,6 +2,8 @@
 
 Example code for creating expanding table view cells using stack views, introduced in iOS 9.
 
+![][gif]
+
 ### What's a stack view?
 
 `UIStackView` is a view introduced in iOS 9. Its main goal is to make it simpler to organize in our layout elements in either horizontal, or vertical stacks. It also promises to minimize the troubles of Auto Layout (which probably has a lot to do with its popularity 😛).
@@ -71,6 +73,7 @@ As you can see, stack views make implementing expanding cells are super easy. If
 
 `UIStackView` is a great addition in iOS 9, and whether you just want to ease the transition into Auto Layout, or have a more maintainable, organized layout, you should definitely give it a try.
 
+[gif]: http://i.imgur.com/RrCFdVa.gif
 [insertion-example]: https://github.com/jozsef-vesza/TableViewExpansions
 [AL-example]: https://github.com/jozsef-vesza/ExpandableTableView
 [IB-screen]: http://i.imgur.com/QLOeld5.png
