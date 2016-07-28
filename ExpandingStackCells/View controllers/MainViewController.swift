@@ -44,9 +44,10 @@ class MainViewController: UITableViewController {
     override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
         
         if let selectedIndex = tableView.indexPathForSelectedRow where selectedIndex == indexPath {
-            
+            let cell = tableView.cellForRowAtIndexPath(selectedIndex) as! ExpandingCell
             tableView.beginUpdates()
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            cell.changeCellStatus(false)
             tableView.endUpdates()
             
             return nil
@@ -56,6 +57,8 @@ class MainViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! ExpandingCell
+        cell.changeCellStatus(true)
         tableView.beginUpdates()
         tableView.endUpdates()
     }

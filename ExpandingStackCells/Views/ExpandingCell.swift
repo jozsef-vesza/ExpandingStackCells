@@ -31,18 +31,30 @@ class ExpandingCell: UITableViewCell {
         stackView.arrangedSubviews.last?.hidden = true
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
-        
-        super.setSelected(selected, animated: animated)
-        
+//    override func setSelected(selected: Bool, animated: Bool) {
+//        
+//        super.setSelected(selected, animated: animated)
+//        
+//        UIView.animateWithDuration(0.5,
+//            delay: 0,
+//            usingSpringWithDamping: 1,
+//            initialSpringVelocity: 1,
+//            options: UIViewAnimationOptions.CurveEaseIn,
+//            animations: { () -> Void in
+//                self.stackView.arrangedSubviews.last?.hidden = !selected
+//            },
+//            completion: nil)
+//    }
+
+    func changeCellStatus(selected: Bool){
         UIView.animateWithDuration(0.5,
-            delay: 0,
-            usingSpringWithDamping: 1,
-            initialSpringVelocity: 1,
-            options: UIViewAnimationOptions.CurveEaseIn,
-            animations: { () -> Void in
-                stackView.arrangedSubviews.last?.hidden = !selected
+                                   delay: 0,
+                                   usingSpringWithDamping: 1,
+                                   initialSpringVelocity: 1,
+                                   options: UIViewAnimationOptions.CurveEaseIn,
+                                   animations: { () -> Void in
+                                    self.stackView.arrangedSubviews.last?.hidden = !selected
             },
-            completion: nil)
+                                   completion: nil)
     }
 }
